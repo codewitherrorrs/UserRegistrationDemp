@@ -6,7 +6,7 @@ namespace UserRegistrationDemo
     {
         public static void DisValidMobileNum()
         {
-            Console.WriteLine("You Enter strong Password Using #?!@$%^&*- etc password like :-  .Qwerty1 , Q1w2e3r4 etc   : ");
+            Console.WriteLine("You Enter  Password first Later Capital  Password like:- .Qwerty1  , !Q1w2e3r4  : ");
             string password = Console.ReadLine();
 
 
