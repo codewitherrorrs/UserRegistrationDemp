@@ -6,22 +6,23 @@ namespace UserRegistrationDemo
     {
         public static void DisValidMobileNum()
         {
-            Console.WriteLine("Enter your Mobile Number  Like :- 91 9919819801  : ");
-            string mobileNumber = Console.ReadLine();
+            Console.WriteLine("You Enter strong Password Using #?!@$%^&*- etc password like :-  .Qwerty1 , Q1w2e3r4 etc   : ");
+            string password = Console.ReadLine();
 
-            string pattern = @"^91\s\d{10}$";
 
-            if (Regex.IsMatch(mobileNumber, pattern))
+
+            string pattern = ("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+
+            if (Regex.IsMatch(password, pattern))
             {
-                Console.WriteLine("Valid mobile number.");
+
+                Console.WriteLine("Password is valid.");
             }
             else
             {
-                Console.WriteLine("Invalid mobile number.");
+
+                Console.WriteLine("Password must be at least 8 characters.");
             }
-
-
-
 
         }
 
