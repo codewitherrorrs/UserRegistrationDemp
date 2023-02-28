@@ -4,31 +4,24 @@ namespace UserRegistrationDemo
 {
     class Program
     {
-        public static void DisValidMobileNum()
+        public static void DisValidPassValid()
         {
-            Console.WriteLine("You Enter  Password first Later Capital  Password like:- .Qwerty1  , !Q1w2e3r4  : ");
+            Console.WriteLine("Enter a password Like :- Abc1234$ , P@ssw0rd1 , 12Monkeys : ");
             string password = Console.ReadLine();
 
-
-
-            string pattern = ("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
-
-            if (Regex.IsMatch(password, pattern))
+            if (!Regex.IsMatch(password, @"^(?=.*\d)[^\s]{8,}$"))
             {
-
-                Console.WriteLine("Password is valid.");
+                Console.WriteLine("Invalid password. The password must contain at least 8 characters, including at least one numeric digit, and must not contain any spaces.");
             }
             else
             {
-
-                Console.WriteLine("Password must be at least 8 characters.");
+                Console.WriteLine("Password is valid.");
             }
-
         }
 
         public static void Main(string[] args)
         {
-            Program.DisValidMobileNum();
+            Program.DisValidPassValid();
         }
     }
 }
