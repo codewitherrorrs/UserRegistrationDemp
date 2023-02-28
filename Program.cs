@@ -4,14 +4,14 @@ namespace UserRegistrationDemo
 {
     class Program
     {
-        public static void DisplayFName()
+        public static void DisplayLastName()
         {
             Console.WriteLine("Enter your FirstName");
-            string firstName = Console.ReadLine();
+            string lastName = Console.ReadLine();
 
-            if (Regex.IsMatch(firstName, "^[A-Z][a-z]{2,}$"))
+            if (Regex.IsMatch(lastName, "^[A-Z][a-z]{2,}$"))
             {
-                Console.WriteLine("Valid first name");
+                Console.WriteLine("Valid Last name");
             }
             else
             {
@@ -24,7 +24,7 @@ namespace UserRegistrationDemo
 
         public static void Main(string[] args)
         {
-            Program.DisplayFName();
+            Program.DisplayLastName();
         }
     }
 }
