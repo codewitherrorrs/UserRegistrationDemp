@@ -4,27 +4,27 @@ namespace UserRegistrationDemo
 {
     class Program
     {
-        public static void DisplayLastName()
+        public static void DisplayValidEmail()
         {
-            Console.WriteLine("Enter your FirstName");
-            string lastName = Console.ReadLine();
+            Console.WriteLine("Enter your email Like : -abc.xyz@bl.co.in : ");
+            string email = Console.ReadLine();
+            string pattern = @"^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*\.(co\.in|in)$";
 
-            if (Regex.IsMatch(lastName, "^[A-Z][a-z]{2,}$"))
+            if (Regex.IsMatch(email, pattern))
             {
-                Console.WriteLine("Valid Last name");
+                Console.WriteLine("Valid email");
             }
             else
             {
-                Console.WriteLine("Invalid first name");
+                Console.WriteLine("Invalid email");
             }
-
 
 
         }
 
         public static void Main(string[] args)
         {
-            Program.DisplayLastName();
+            Program.DisplayValidEmail();
         }
     }
 }
