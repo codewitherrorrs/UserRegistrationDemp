@@ -4,27 +4,30 @@ namespace UserRegistrationDemo
 {
     class Program
     {
-        public static void DisplayValidEmail()
+        public static void DisValidMobileNum()
         {
-            Console.WriteLine("Enter your email Like : -abc.xyz@bl.co.in : ");
-            string email = Console.ReadLine();
-            string pattern = @"^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*\.(co\.in|in)$";
+            Console.WriteLine("Enter your Mobile Number  Like :- 91 9919819801  : ");
+            string mobileNumber = Console.ReadLine();
 
-            if (Regex.IsMatch(email, pattern))
+            string pattern = @"^91\s\d{10}$";
+
+            if (Regex.IsMatch(mobileNumber, pattern))
             {
-                Console.WriteLine("Valid email");
+                Console.WriteLine("Valid mobile number.");
             }
             else
             {
-                Console.WriteLine("Invalid email");
+                Console.WriteLine("Invalid mobile number.");
             }
+
+
 
 
         }
 
         public static void Main(string[] args)
         {
-            Program.DisplayValidEmail();
+            Program.DisValidMobileNum();
         }
     }
 }
