@@ -4,24 +4,33 @@ namespace UserRegistrationDemo
 {
     class Program
     {
-        public static void DisValidPassValid()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Enter a password Like :- Abc1234$ , P@ssw0rd1 , 12Monkeys : ");
-            string password = Console.ReadLine();
 
-            if (!Regex.IsMatch(password, @"^(?=.*\d)[^\s]{8,}$"))
+            Console.WriteLine("Enter an email address : ");
+            string email = Console.ReadLine();
+
+
+            if (ValidateEmail(email))
             {
-                Console.WriteLine("Invalid password. The password must contain at least 8 characters, including at least one numeric digit, and must not contain any spaces.");
+                Console.WriteLine("The email address is valid.");
             }
             else
             {
-                Console.WriteLine("Password is valid.");
+                Console.WriteLine("The email address is invalid.");
             }
         }
 
-        public static void Main(string[] args)
+        static bool ValidateEmail(string email)
         {
-            Program.DisValidPassValid();
+
+            string emailRegex = @"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$";
+
+
+            Match match = Regex.Match(email, emailRegex);
+
+
+            return match.Success;
         }
     }
 }
