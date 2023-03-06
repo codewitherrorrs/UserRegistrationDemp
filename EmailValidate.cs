@@ -9,17 +9,16 @@ namespace UserRegistrationDemo
 {
     public class EmailValidate
     {
-       
-
-        public string validate(string firstName,string lastName,String email,string mobile,string password)
+       public  string message = "Exception Not Occur";
+        public void validate(string firstName,string lastName,String email,string mobile,string password)
         {
-            if(firstName== "" && lastName == "" && email == "" && mobile == "" && password == "") 
+            if(firstName == null && lastName == null && email == null && mobile == null && password == null) 
             {
-                return "SAD";
+                throw new Exception("All details is not filled Exception");
             }
             else
             {
-                return "HAPPY";
+                Console.WriteLine("Message : "+message);
             }
         }
     }
